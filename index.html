@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>白桃书 · 免费中文古典小说在线阅读</title>
+<meta name="description" content="白桃书是一个安静的中文阅读站：793 本小说免费在线阅读，25 本古典名著公版全文，含故事地图、听书、段落点评，支持简体、繁體、日本語、English 四种界面。">
+<meta name="keywords" content="白桃书,免费小说,在线阅读,古典名著,红楼梦,三国演义,公版书">
+<link rel="canonical" href="https://baitaoshu.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%23a63a2c'/%3E%3Ctext x='32' y='42' font-size='34' fill='%23f6f2e9' text-anchor='middle' font-family='serif'%3E白%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="白桃书">
+<meta property="og:title" content="白桃书 · 免费中文古典小说在线阅读">
+<meta property="og:description" content="793 本小说免费在线阅读，25 本古典名著公版全文，含故事地图、听书与段落点评。">
+<meta property="og:url" content="https://baitaoshu.github.io/">
+<style>
+  :root{
+    --paper:#f6f2e9;
+    --paper-2:#efe9dc;
+    --ink:#191817;
+    --ink-2:#4a443d;
+    --muted:#7a7168;
+    --rule:rgba(25,24,23,.14);
+    --seal:#a63a2c;
+    --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+    --sans:"Inter","Helvetica Neue",-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--serif);font-size:17px;line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+    background-image:radial-gradient(rgba(25,24,23,.045) 1px,transparent 1px);
+    background-size:3px 3px;
+  }
+  a{color:inherit}
+  .wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* ── 顶栏 ── */
+  header{border-bottom:1px solid var(--rule)}
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .seal{
+    width:34px;height:34px;background:var(--seal);color:#f8f4ec;
+    display:grid;place-items:center;border-radius:3px;
+    font-size:17px;line-height:1;letter-spacing:0;
+  }
+  .brand b{font-size:19px;font-weight:600;letter-spacing:.14em}
+  nav{display:flex;gap:26px;font-family:var(--sans);font-size:13.5px;letter-spacing:.04em;color:var(--ink-2)}
+  nav a{text-decoration:none;padding-bottom:2px;border-bottom:1px solid transparent}
+  nav a:hover{color:var(--seal);border-color:var(--seal)}
+
+  /* ── 首屏 ── */
+  .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;padding:88px 0 76px}
+  .kicker{font-family:var(--sans);font-size:12.5px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;margin:0 0 22px}
+  h1{margin:0;font-size:clamp(38px,5.4vw,60px);line-height:1.24;font-weight:600;letter-spacing:.02em}
+  h1 em{font-style:normal;color:var(--seal)}
+  .lede{margin:26px 0 0;max-width:34em;color:var(--ink-2);font-size:17.5px}
+  .cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;
+    font-family:var(--sans);font-size:14.5px;letter-spacing:.03em;
+    padding:13px 24px;border-radius:2px;transition:background .18s,color .18s,border-color .18s;
+  }
+  .btn-primary{background:var(--seal);color:#fbf7ef;border:1px solid var(--seal)}
+  .btn-primary:hover{background:#8c2f24;border-color:#8c2f24}
+  .btn-ghost{border:1px solid var(--rule);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);background:rgba(25,24,23,.04)}
+
+  /* 书脊架 */
+  .shelf{display:flex;justify-content:flex-end;align-items:flex-end;gap:7px;height:340px;padding-bottom:18px;border-bottom:2px solid var(--ink)}
+  .spine{
+    position:relative;width:44px;height:calc(100% - var(--drop,0px));
+    background:var(--paper-2);border:1px solid var(--rule);border-bottom:none;border-radius:2px 2px 0 0;
+    writing-mode:vertical-rl;text-orientation:upright;
+    display:flex;align-items:center;justify-content:flex-start;padding:16px 0;
+    font-size:13.5px;letter-spacing:.1em;color:var(--ink-2);
+    text-decoration:none;transition:transform .2s,background .2s,color .2s;
+  }
+  .spine span{display:block}
+  .spine:hover{transform:translateY(-8px);background:#fff;color:var(--seal)}
+  .spine.alt{background:#e7e0d1}
+
+  /* ── 数据条 ── */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .stat{padding:30px 26px;border-left:1px solid var(--rule)}
+  .stat:first-child{border-left:none;padding-left:0}
+  .stat b{display:block;font-size:30px;font-weight:600;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+  .stat span{display:block;margin-top:6px;font-family:var(--sans);font-size:12.5px;letter-spacing:.08em;color:var(--muted)}
+
+  /* ── 区块 ── */
+  section{padding:80px 0}
+  .h2{display:flex;align-items:baseline;gap:18px;margin:0 0 12px;font-size:26px;font-weight:600;letter-spacing:.06em}
+  .h2 small{font-family:var(--sans);font-size:12px;letter-spacing:.18em;color:var(--muted);font-weight:400;text-transform:uppercase}
+  .sub{margin:0 0 44px;color:var(--muted);max-width:40em}
+
+  .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .feat article{background:var(--paper);padding:32px 30px 34px}
+  .feat h3{margin:18px 0 8px;font-size:17.5px;font-weight:600;letter-spacing:.04em}
+  .feat p{margin:0;color:var(--ink-2);font-size:15.5px;line-height:1.75}
+  .feat svg{stroke:var(--seal);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+  /* 书目 */
+  .list{border-top:1px solid var(--rule)}
+  .list a{
+    display:grid;grid-template-columns:1fr auto auto;gap:20px;align-items:baseline;
+    padding:17px 4px;border-bottom:1px solid var(--rule);text-decoration:none;
+    transition:background .15s,padding-left .15s;
+  }
+  .list a:hover{background:rgba(166,58,44,.05);padding-left:12px}
+  .list .t{font-size:18px;letter-spacing:.04em}
+  .list .a{font-family:var(--sans);font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+  .list .n{font-family:var(--sans);font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+  /* 开源 */
+  .oss{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  pre{
+    margin:0;background:#221f1c;color:#efe9dc;border-radius:3px;
+    padding:22px 24px;overflow-x:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:13.5px;line-height:1.75;
+  }
+  pre .c{color:#a89e8e}
+  .oss p{color:var(--ink-2)}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin-top:24px;font-size:14.5px}
+  .kv dt{font-family:var(--sans);font-size:12.5px;letter-spacing:.08em;color:var(--muted)}
+  .kv dd{margin:0}
+
+  footer{border-top:1px solid var(--rule);padding:44px 0 56px;color:var(--muted);font-size:13.5px}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;font-family:var(--sans);letter-spacing:.03em}
+  .foot a{text-decoration:none;border-bottom:1px solid var(--rule)}
+  .foot a:hover{color:var(--seal);border-color:var(--seal)}
+
+  @media (max-width:900px){
+    .hero{grid-template-columns:1fr;gap:44px;padding:56px 0 52px}
+    .shelf{justify-content:flex-start;height:250px}
+    .feat{grid-template-columns:1fr 1fr}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(3){border-left:none;padding-left:0}
+    .stat:nth-child(n+3){border-top:1px solid var(--rule)}
+    .oss{grid-template-columns:1fr;gap:32px}
+    section{padding:58px 0}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .wrap{padding:0 18px}
+    .bar{height:64px}
+    nav{gap:16px;font-size:12.5px}
+    .feat{grid-template-columns:1fr}
+    .spine{width:34px;font-size:12px}
+    .list a{grid-template-columns:1fr auto;gap:6px 14px}
+    .list .a{grid-column:1/-1;order:3}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="/"><span class="seal">白</span><b>白桃书</b></a>
+    <nav>
+      <a href="https://baitaoshu.com">开始阅读</a>
+      <a href="#books">书库</a>
+      <a href="#oss">开源</a>
+      <a href="https://github.com/baitaoshu">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <p class="kicker">中文小说 · 免费在线阅读</p>
+        <h1>安静地读<br>一本<em>书</em>。</h1>
+        <p class="lede">793 本中文小说，25 部古典名著的公版全文。没有弹窗，没有「下载 App 才能看」，打开就是正文。</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://baitaoshu.com">进入书站 →</a>
+          <a class="btn btn-ghost" href="https://github.com/baitaoshu/books">取用公版全文</a>
+        </div>
+      </div>
+      <div class="shelf" aria-label="书脊">
+        <a class="spine" style="--drop:34px" href="https://baitaoshu.com/b/7/"><span>红楼梦</span></a>
+        <a class="spine alt" style="--drop:12px" href="https://baitaoshu.com/b/9/"><span>三国演义</span></a>
+        <a class="spine" style="--drop:52px" href="https://baitaoshu.com/b/8/"><span>西游记</span></a>
+        <a class="spine alt" style="--drop:0px" href="https://baitaoshu.com/b/437/"><span>水浒传</span></a>
+        <a class="spine" style="--drop:68px" href="https://baitaoshu.com/b/438/"><span>聊斋志异</span></a>
+        <a class="spine alt" style="--drop:26px" href="https://baitaoshu.com/b/441/"><span>封神演义</span></a>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>793</b><span>本在架小说</span></div>
+      <div class="stat"><b>25</b><span>部公版名著</span></div>
+      <div class="stat"><b>1007</b><span>个故事地图点位</span></div>
+      <div class="stat"><b>4</b><span>种界面语言</span></div>
+    </div>
+  </div>
+
+  <section class="wrap" id="feature">
+    <h2 class="h2">它是怎么做的 <small>Features</small></h2>
+    <p class="sub">不是把 txt 塞进网页就完事。阅读这件事，细节比功能多。</p>
+    <div class="feat">
+      <article>
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 19.5V6a2 2 0 0 1 2-2h12v16H6a2 2 0 0 1-2-2Z"/><path d="M8 4v16"/></svg>
+        <h3>精校公版全文</h3>
+        <p>二十五部古典名著逐章校对，分回、目录、断句统一处理，不是网上随手抓的错字版。</p>
+      </article>
+      <article>
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+        <h3>故事地图</h3>
+        <p>把书里真实可考的地名落到地图上，每个点位标注首次出现的章回与原文，点一下跳过去读。</p>
+      </article>
+      <article>
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><path d="M4 14h2a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a1 1 0 0 1-1-1Z"/><path d="M20 14h-2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a1 1 0 0 0 1-1Z"/></svg>
+        <h3>浏览器听书</h3>
+        <p>不用装插件，调系统语音从头念到尾，支持断点续听，夜里关灯也能读下去。</p>
+      </article>
+      <article>
+        <svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.4 3.9 5.4 3.9 9S14.6 18.6 12 21c-2.6-2.4-3.9-5.4-3.9-9S9.4 5.4 12 3Z"/></svg>
+        <h3>简 · 繁 · 日 · 英</h3>
+        <p>界面整套四语切换，繁体是把书名与正文一并转字形，不是只换几句导航。</p>
+      </article>
+      <article>
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 6h11M8 12h11M8 18h7"/><circle cx="4.2" cy="6" r="1.1"/><circle cx="4.2" cy="12" r="1.1"/><circle cx="4.2" cy="18" r="1.1"/></svg>
+        <h3>段落点评</h3>
+        <p>选中一段就能批注、看别人写了什么。读到「原来你也在这里」那一刻，不至于没有人说话。</p>
+      </article>
+      <article>
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>
+        <h3>全文检索</h3>
+        <p>书名、作者、正文一起搜，命中处高亮并直接落到那一段，不用自己翻两百回找一句话。</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="wrap" id="books">
+    <h2 class="h2">公版书库 <small>Public Domain</small></h2>
+    <p class="sub">下面这些书在 GitHub 上就是纯 Markdown，一个文件一本。可以直接读，也可以 <code>git clone</code> 走。</p>
+    <div class="list">
+      <a href="https://github.com/baitaoshu/books/blob/main/books/hongloumeng.md"><span class="t">红楼梦</span><span class="a">曹雪芹</span><span class="n">120 回 · 86.5 万字</span></a>
+      <a href="https://github.com/baitaoshu/books/blob/main/books/xiyouji.md"><span class="t">西游记</span><span class="a">吴承恩</span><span class="n">100 回 · 73.0 万字</span></a>
+      <a href="https://github.com/baitaoshu/books/blob/main/books/sanguoyanyi.md"><span class="t">三国演义</span><span class="a">罗贯中</span><span class="n">120 回 · 59.5 万字</span></a>
+      <a href="https://github.com/baitaoshu/books/blob/main/books/shuihuzhuan.md"><span class="t">水浒传</span><span class="a">施耐庵</span><span class="n">117 回 · 88.0 万字</span></a>
+      <a href="https://github.com/baitaoshu/books/blob/main/books/liaozhaizhiyi.md"><span class="t">聊斋志异</span><span class="a">蒲松龄</span><span class="n">496 篇 · 48.5 万字</span></a>
+      <a href="https://github.com/baitaoshu/books"><span class="t">全部 25 部 →</span><span class="a">公版全文</span><span class="n">2184 篇 · 973 万字</span></a>
+    </div>
+  </section>
+
+  <section class="wrap" id="oss">
+    <h2 class="h2">开源的部分 <small>Open</small></h2>
+    <p class="sub">书是古人的，整理是公开的。取走不用问。</p>
+    <div class="oss">
+      <div>
+        <pre><span class="c"># 25 部古典名著，24 MB</span>
+git clone https://github.com/baitaoshu/books.git
+
+<span class="c"># 书目：slug / 作者 / 篇数 / 字数 / 简介</span>
+cat books/index.json</pre>
+        <dl class="kv">
+          <dt>正文</dt><dd>公有领域，自由商用，无需署名</dd>
+          <dt>整理</dt><dd>CC0 1.0，同样进入公有领域</dd>
+          <dt>不含</dt><dd>在更网文、出版社校注本（有版权）</dd>
+        </dl>
+      </div>
+      <div>
+        <p>书库刻意做得很笨：一本书一个 <code>.md</code>，标题分两层，没有依赖、没有构建步骤、没有私有格式。想拿去喂给检索、做 EPUB、转成语音、训练语料，都只要一行 <code>cat</code>。</p>
+        <p>站点本身是自建的：Go 后端、React 阅读器、MySQL 存章回，封面与静态页在构建期生成。跑在自己的服务器上，不挂第三方阅读平台。</p>
+        <div class="cta">
+          <a class="btn btn-ghost" href="https://github.com/baitaoshu/books">books 仓库</a>
+          <a class="btn btn-ghost" href="https://github.com/baitaoshu">账号主页</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 白桃书 · 古籍原文属公有领域</span>
+    <span>
+      <a href="https://baitaoshu.com">baitaoshu.com</a> ·
+      <a href="https://github.com/baitaoshu/books">书库</a> ·
+      <a href="https://baitaoshu.com/copyright/">版权说明</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
