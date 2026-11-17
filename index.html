@@ -239,13 +239,13 @@
 
   <section class="wrap" id="books">
     <h2 class="h2">公版书库 <small>Public Domain</small></h2>
-    <p class="sub">下面这些书在 GitHub 上就是纯 Markdown，一个文件一本。可以直接读，也可以 <code>git clone</code> 走。</p>
+    <p class="sub">下面这些书在 GitHub 上就是纯 Markdown：一本书一个目录，一章一个文件。可以直接读，也可以 <code>git clone</code> 走。</p>
     <div class="list">
-      <a href="https://github.com/baitaoshu/books/blob/main/books/hongloumeng.md"><span class="t">红楼梦</span><span class="a">曹雪芹</span><span class="n">120 回 · 86.5 万字</span></a>
-      <a href="https://github.com/baitaoshu/books/blob/main/books/xiyouji.md"><span class="t">西游记</span><span class="a">吴承恩</span><span class="n">100 回 · 73.0 万字</span></a>
-      <a href="https://github.com/baitaoshu/books/blob/main/books/sanguoyanyi.md"><span class="t">三国演义</span><span class="a">罗贯中</span><span class="n">120 回 · 59.5 万字</span></a>
-      <a href="https://github.com/baitaoshu/books/blob/main/books/shuihuzhuan.md"><span class="t">水浒传</span><span class="a">施耐庵</span><span class="n">117 回 · 88.0 万字</span></a>
-      <a href="https://github.com/baitaoshu/books/blob/main/books/liaozhaizhiyi.md"><span class="t">聊斋志异</span><span class="a">蒲松龄</span><span class="n">496 篇 · 48.5 万字</span></a>
+      <a href="https://github.com/baitaoshu/books/tree/main/books/hongloumeng"><span class="t">红楼梦</span><span class="a">曹雪芹</span><span class="n">120 回 · 86.5 万字</span></a>
+      <a href="https://github.com/baitaoshu/books/tree/main/books/xiyouji"><span class="t">西游记</span><span class="a">吴承恩</span><span class="n">100 回 · 73.0 万字</span></a>
+      <a href="https://github.com/baitaoshu/books/tree/main/books/sanguoyanyi"><span class="t">三国演义</span><span class="a">罗贯中</span><span class="n">120 回 · 59.5 万字</span></a>
+      <a href="https://github.com/baitaoshu/books/tree/main/books/shuihuzhuan"><span class="t">水浒传</span><span class="a">施耐庵</span><span class="n">117 回 · 88.0 万字</span></a>
+      <a href="https://github.com/baitaoshu/books/tree/main/books/liaozhaizhiyi"><span class="t">聊斋志异</span><span class="a">蒲松龄</span><span class="n">496 篇 · 48.5 万字</span></a>
       <a href="https://github.com/baitaoshu/books"><span class="t">全部 25 部 →</span><span class="a">公版全文</span><span class="n">2184 篇 · 973 万字</span></a>
     </div>
   </section>
@@ -255,7 +255,7 @@
     <p class="sub">书是古人的，整理是公开的。取走不用问。</p>
     <div class="oss">
       <div>
-        <pre><span class="c"># 25 部古典名著，24 MB</span>
+        <pre><span class="c"># 25 部古典名著，2184 篇，33 MB</span>
 git clone https://github.com/baitaoshu/books.git
 
 <span class="c"># 书目：slug / 作者 / 篇数 / 字数 / 简介</span>
@@ -267,7 +267,7 @@ cat books/index.json</pre>
         </dl>
       </div>
       <div>
-        <p>书库刻意做得很笨：一本书一个 <code>.md</code>，标题分两层，没有依赖、没有构建步骤、没有私有格式。想拿去喂给检索、做 EPUB、转成语音、训练语料，都只要一行 <code>cat</code>。</p>
+        <p>书库刻意做得很笨：一本书一个目录，一章一个 <code>.md</code>，没有依赖、没有构建步骤、没有私有格式。想拿去喂给检索、做 EPUB、转成语音、训练语料，都只要一行 <code>cat</code>。</p>
         <p>站点本身是自建的：Go 后端、React 阅读器、MySQL 存章回，封面与静态页在构建期生成。跑在自己的服务器上，不挂第三方阅读平台。</p>
         <div class="cta">
           <a class="btn btn-ghost" href="https://github.com/baitaoshu/books">books 仓库</a>

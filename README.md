@@ -18,7 +18,7 @@
 
 | 仓库 | 内容 |
 |---|---|
-| [books](https://github.com/baitaoshu/books) | 25 部古典名著公版全文，Markdown + `index.json`，CC0 |
+| [books](https://github.com/baitaoshu/books) | 25 部古典名著公版全文，一章一个 Markdown + `index.json`，CC0 |
 | [baitaoshu](https://github.com/baitaoshu/baitaoshu) | 账号主页 |
 
 ## 本地预览
