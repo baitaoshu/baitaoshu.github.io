@@ -76,13 +76,13 @@
   .spine{
     position:relative;width:44px;height:calc(100% - var(--drop,0px));
     background:var(--paper-2);border:1px solid var(--rule);border-bottom:none;border-radius:2px 2px 0 0;
-    writing-mode:vertical-rl;text-orientation:upright;
-    display:block;padding:18px 0;text-align:center;line-height:1.5;
-    font-size:13.5px;letter-spacing:.12em;color:var(--ink-2);
+    display:block;padding:14px 0 10px;text-align:center;
+    font-size:14px;line-height:1.16;color:var(--ink-2);
     text-decoration:none;transition:transform .2s,background .2s,color .2s;
   }
-  .spine span{display:inline-block}
-  .spine:hover{transform:translateY(-8px);background:#fff;color:var(--seal)}
+  .spine i{display:block;font-style:normal;letter-spacing:0}
+  .spine .v{display:block}
+  .spine:hover{transform:translateY(-10px);background:#fff;color:var(--seal)}
   .spine.alt{background:#e7e0d1}
 
   /* ── 数据条 ── */
@@ -183,12 +183,12 @@
         </div>
       </div>
       <div class="shelf" aria-label="书脊">
-        <a class="spine" style="--drop:34px" href="https://baitaoshu.com/b/7/"><span>红楼梦</span></a>
-        <a class="spine alt" style="--drop:12px" href="https://baitaoshu.com/b/9/"><span>三国演义</span></a>
-        <a class="spine" style="--drop:52px" href="https://baitaoshu.com/b/8/"><span>西游记</span></a>
-        <a class="spine alt" style="--drop:0px" href="https://baitaoshu.com/b/437/"><span>水浒传</span></a>
-        <a class="spine" style="--drop:68px" href="https://baitaoshu.com/b/438/"><span>聊斋志异</span></a>
-        <a class="spine alt" style="--drop:26px" href="https://baitaoshu.com/b/441/"><span>封神演义</span></a>
+        <a class="spine" style="--drop:34px" href="https://baitaoshu.com/b/7/"><span class="v"><i>红</i><i>楼</i><i>梦</i></span></a>
+        <a class="spine alt" style="--drop:12px" href="https://baitaoshu.com/b/9/"><span class="v"><i>三</i><i>国</i><i>演</i><i>义</i></span></a>
+        <a class="spine" style="--drop:52px" href="https://baitaoshu.com/b/8/"><span class="v"><i>西</i><i>游</i><i>记</i></span></a>
+        <a class="spine alt" style="--drop:0px" href="https://baitaoshu.com/b/437/"><span class="v"><i>水</i><i>浒</i><i>传</i></span></a>
+        <a class="spine" style="--drop:68px" href="https://baitaoshu.com/b/438/"><span class="v"><i>聊</i><i>斋</i><i>志</i><i>异</i></span></a>
+        <a class="spine alt" style="--drop:26px" href="https://baitaoshu.com/b/441/"><span class="v"><i>封</i><i>神</i><i>演</i><i>义</i></span></a>
       </div>
     </div>
 
